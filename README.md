@@ -2,6 +2,10 @@
 
 Simplest application, takes the _homography matrix_ and a screen point, so to generate its corresponding world point.
 
+Better if used with the results of https://github.com/rodolfoap/points-picker.
+
+This application is useful in case of finding the world coordinates of a point (for example, latitude, longitude, using the WGS84 _datum_) that corresponds to some screen coordinates. That is, having the screen coordinates from a camera image showing where is a person, it is possible to find his world coordinates. The `transform.cpp` example produces a transform for one point, but being the input a `vector<>`, multiple points can be transformed at a time.
+
 ## Build
 
 ```
@@ -13,6 +17,12 @@ popd
 
 ## Usage
 
+### Generate the points matrix
+
+* Use https://github.com/rodolfoap/points-picker to generate the points matrix
+* Or check the `test/placewilson.yaml` format and create an equivalent file, containing correspondences between image points and camera points
+
+), taking a set of screen to world correspondences.
 ### Generate the homography matrix (**H**), taking a set of screen to world correspondences.
 
 ```
