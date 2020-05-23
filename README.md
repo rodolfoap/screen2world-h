@@ -22,7 +22,6 @@ popd
 * Use https://github.com/rodolfoap/points-picker to generate the points matrix
 * Or check the `test/placewilson.yaml` format and create an equivalent file, containing correspondences between image points and camera points
 
-), taking a set of screen to world correspondences.
 ### Generate the homography matrix (**H**), taking a set of screen to world correspondences.
 
 ```
