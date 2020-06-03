@@ -6,6 +6,10 @@ Better if used with the results of https://github.com/rodolfoap/points-picker.
 
 This application is useful in case of finding the world coordinates of a point (for example, latitude, longitude, using the WGS84 _datum_) that corresponds to some screen coordinates. That is, having the screen coordinates from a camera image showing where is a person, it is possible to find his world coordinates. The `transform.cpp` example produces a transform for one point, but being the input a `vector<>`, multiple points can be transformed at a time.
 
+* To find better screen-to-world correspondences (which point in the space in the camera image corresponds to a point in the screen), an _extrinsics matrix_ is required. See the full calculation here: https://github.com/rodolfoap/screen2world-k. In such example, the _extrinsics matrix_ is calculated using a set of world-to-screen point correspondences.
+* To find screen-to-world correspondences, another approach is proposed: See the full calculation here: https://github.com/rodolfoap/screen2world-d. In such example, the _extrinsics matrix_ is calculated by using a set of person detection boxes to calculate the distances to the camera. Knowing the camera bearing, world-to-screen points correspondences are automatically found, and the _extrinsics matrix_ is calculated in some steps.
+* Both previous applications require an _intrinsics matrix_ (also called _calibration matrix_, _camera matrix_ or _K matrix_) which can be calculated using https://github.com/rodolfoap/cameracalibration.
+
 ## Build
 
 ```
